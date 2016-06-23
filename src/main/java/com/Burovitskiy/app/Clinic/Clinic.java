@@ -20,8 +20,14 @@ public class Clinic{
 		this.clients = new ArrayList<Client>();
 	}
 	/**
+	 Получить массив всех клиентов
+	 */
+	public ArrayList<Client> getClients(){
+		return this.clients;
+	}
+	/**
 	Добавить клиента
-	 @param client
+	 @param client client
 	*/
 
 	public void addClient(final Client client){
@@ -35,7 +41,7 @@ public class Clinic{
 					isTrue = false;
 				}
 			}
-			if(isTrue == true){
+			if(isTrue){
 				this.clients.add(client);
 				System.out.println("Клиент add");
 			}
@@ -54,11 +60,11 @@ public class Clinic{
 	public Client findClientsByPetName(final String name){
 		Client findClient = null;
 		if(clients.size() > 0){
-			for(int i = 0; i < clients.size(); i++){
+			for(Client client : clients){
 				
-				String namePet = clients.get(i).getPet().getName();
+				String namePet = client.getPet().getName();
 				if(namePet.equals(name)){
-					findClient = clients.get(i);
+					findClient = client;
 				}
 			}
 		}
@@ -72,11 +78,12 @@ public class Clinic{
 	public Client findClientsByName(final String name){
 		Client findClient = null;
 		if(clients.size() > 0){
-			for(int i = 0; i < clients.size(); i++){
+			for(Client client : clients){
 				
-				String nameClient = clients.get(i).getName();
+				String nameClient = client.getName();
 				if(nameClient.equals(name)){
-					findClient = clients.get(i);
+					findClient = client;
+					break; // дальше нет смысла проверять, такой клиент один
 				}
 			}
 		}
@@ -103,7 +110,7 @@ public class Clinic{
 	}
 	/**
 	Редактирование имени питомца
-	@param name имя питомца
+	@param nameClient имя питомца
 	*/
 	public void renamePetName(final String nameClient){
 			for(int i = 0; i < clients.size(); i++){

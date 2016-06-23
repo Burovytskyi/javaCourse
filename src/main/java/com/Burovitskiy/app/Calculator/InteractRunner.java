@@ -20,7 +20,7 @@ public class InteractRunner {
 			*/
 			while(!exit.equals("yes")){
 					System.out.println("Enter first arg : ");
-					Double first = Double.valueOf(reader.next());
+					double first = Double.valueOf(reader.next());
 				/*
 					Цикл отвечает за работу с результатом
 				*/
@@ -28,7 +28,7 @@ public class InteractRunner {
 					System.out.println("Enter operation \"+\", \"-\", \"/\", \"*\" : ");
 					String action = reader.next();
 					System.out.println("Enter second arg : ");
-					Double second = Double.valueOf(reader.next());
+					double second = Double.valueOf(reader.next());
 					if(action.equals("+")){
 							calc.plus(first, second);
 					}

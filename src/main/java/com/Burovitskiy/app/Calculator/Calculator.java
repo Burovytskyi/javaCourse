@@ -8,7 +8,7 @@ public class Calculator{
 	/**
 		Результат вычисления
 	*/
-	private Double result = null;
+	private double result = 0;
 	
 	/**
 		Суммирует аргументы
@@ -73,6 +73,6 @@ public class Calculator{
 		Очистить результат
 	*/
 	public void cleanResult(){
-		this.result = null;
+		this.result = 0;
 	}
 }
